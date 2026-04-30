@@ -1,0 +1,33 @@
+name: 🚴 Wedstrijd Herinneringen
+
+on:
+  schedule:
+    # Elke dag om 08:00 UTC = 09:00 Belgische tijd (winter) / 10:00 (zomer)
+    # Pas aan naar 07:00 UTC in de zomer voor exact 09:00 BE
+    - cron: '0 8 * * *'
+
+  # Optioneel: ook handmatig triggeren via GitHub interface
+  workflow_dispatch:
+
+jobs:
+  send-reminders:
+    runs-on: ubuntu-latest
+    name: Stuur herinneringen
+
+    steps:
+      - name: 📥 Code ophalen
+        uses: actions/checkout@v4
+
+      - name: 🟢 Node.js instellen
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: 📦 Dependencies installeren
+        run: npm install firebase-admin node-fetch
+
+      - name: 📧 Herinneringen sturen
+        run: node scripts/sendReminders.js
+        env:
+          MAILERSEND_KEY: ${{ secrets.MAILERSEND_KEY }}
+          FIREBASE_KEY: ${{ secrets.FIREBASE_KEY }}
