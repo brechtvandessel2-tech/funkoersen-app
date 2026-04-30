@@ -16,7 +16,7 @@ initializeApp({ credential: cert(serviceAccount) });
 const db = getFirestore();
 
 const MAILERSEND_KEY = process.env.MAILERSEND_KEY;
-const FROM_EMAIL = "herinneringen@jouwdomein.be"; // ← aanpassen
+const FROM_EMAIL = "test-p7kx4xw56x8g9yjr.mlsender.net"; // ← aanpassen
 const FROM_NAME = "Funkoersen Kalender";
 const APP_URL = "https://JOUW_PROJECT.web.app"; // ← aanpassen
 
