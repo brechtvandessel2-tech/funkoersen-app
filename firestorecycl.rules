@@ -1,0 +1,17 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Wedstrijden: iedereen kan lezen, alleen ingelogde gebruikers kunnen schrijven/verwijderen
+    match /races/{raceId} {
+      allow read: if true;
+      allow create, update, delete: if request.auth != null;
+    }
+
+    // Inschrijvingen: iedereen kan lezen en schrijven (voor in/uitschrijven zonder account)
+    // Verwijderen alleen als het eigen e-mail is (via de app logica)
+    match /subscriptions/{subId} {
+      allow read, write: if true;
+    }
+  }
+}
