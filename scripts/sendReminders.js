@@ -21,7 +21,8 @@ const APP_URL = "https://funkoersen-2026.web.app";
 const REMINDER_DAYS = [7, 3, 1];
  
 async function sendRemindersForDays(days) {
-  const target = new Date();
+  const now = new Date(new Date().toLocaleString("en-US", { timeZone: "Europe/Brussels" }));
+  const target = new Date(now);
   target.setDate(target.getDate() + days);
   const targetStr = target.toISOString().split("T")[0];
  
