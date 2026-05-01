@@ -17,6 +17,7 @@ const db = getFirestore();
 
 const MAILERSEND_KEY = process.env.MAILERSEND_KEY;
 const FROM_EMAIL = "noreply@test-p7kx4xw56x8g9yjr.mlsender.net"; // ← aanpassen
+console.log("FROM_EMAIL:", JSON.stringify(FROM_EMAIL));
 const FROM_NAME = "Funkoersen Kalender";
 const APP_URL = "https://funkoersen-2026.web.app"; // ← aanpassen
 
