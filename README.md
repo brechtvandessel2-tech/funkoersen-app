@@ -1,7 +1,7 @@
 # 🚴 Funkoersen Kalender — Setup Guide
 
 ## Vereisten
-- Node.js 18+
+- Node.js 18+ ()
 - VS Code
 - Firebase account (gratis Spark plan volstaat)
 - MailerSend account (gratis tier: 3000 e-mails/maand)
