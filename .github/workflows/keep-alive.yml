@@ -4,6 +4,7 @@ on:
   schedule:
     # Dit draait elke 1e dag van de maand om 00:00 UTC
     - cron: '0 0 1 * *'
+  workflow_dispatch:
 
 jobs:
   keep-alive:
