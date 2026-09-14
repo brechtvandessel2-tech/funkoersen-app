@@ -16,7 +16,7 @@ const db = getFirestore();
 const MAILERSEND_KEY = process.env.MAILERSEND_KEY;
 const FROM_EMAIL = "herinneringen@funkoersen-kalender.be";
 const FROM_NAME = "Funkoersen Kalender";
-const APP_URL = "https://funkoersen-kalender.web.app";
+const APP_URL = "https://funkoersen-kalender.be";
 
  
 const REMINDER_DAYS = [7, 3, 1];
