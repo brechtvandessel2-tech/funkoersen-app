@@ -11,6 +11,9 @@ on:
 
 jobs:
   send-reminders:
+    # Enkel in de repo met de secrets (funkoersen-app); de ontwikkelrepo
+    # funkoersen-app-v3 bevat dezelfde workflow maar mag niets versturen.
+    if: github.repository == 'brechtvandessel2-tech/funkoersen-app'
     runs-on: ubuntu-latest
     name: Stuur herinneringen
 
